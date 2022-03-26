@@ -1,0 +1,12 @@
+<div class="client-form-main-container">
+    <app-back-button [route]="'home/client/list'"></app-back-button>    
+    <form class="client-form-container" [formGroup]="FormGroup">
+        <div class="form-client-title">Formulario Cliente</div>        
+        <input type="text" formControlName="name"  class="formInput" [class.is-invalid]="invalidFieldsTwo('name')" placeholder="Introduce el nombre *">     
+        <input type="text" formControlName="lastName"  class="formInput"  [class.is-invalid]="invalidFieldsTwo('lastName')"placeholder="Introduce el apellido *"> 
+        <input type="text" formControlName="email"  class="formInput" [class.is-invalid]="invalidFieldsTwo('email')" placeholder="Introduce el correo *">  
+        <button *ngIf="!id" class="btn-save formInput" (click)="validateForm('save')">Guardar</button> 
+        <app-form-buttons *ngIf="id" [left-btn]="'Modificar'" [right-btn]="'Eliminar'" (updateElement)="validateForm($event)" (deleteElement)="openDialog($event)"></app-form-buttons>                   
+    </form>    
+</div>
+

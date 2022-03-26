@@ -1,0 +1,44 @@
+<div class="invoice-form-main-container">
+    <app-back-button [route]="'home/invoice/list'"></app-back-button> 
+    <form class="invoice-form-container" [formGroup]="formGroup">        
+        <div class="form-invoice-title">Formulario Factura</div> 
+        <div class="title-field-form" *ngIf="code">Código</div>
+        <input   type="text"  class="formInput" *ngIf="code" formControlName="code" readonly >
+        <div class="title-field-form">Cliente *</div>
+        <select class="selectForm" formControlName="client" [class.is-invalid]="invalidFieldsTwo('client')">
+            <option *ngIf="!code"></option>
+            <option *ngFor="let client of clients" >{{client.id}}</option>                      
+        </select>
+        <div class="title-field-form">Ciudad *</div>
+        <select class="selectForm" formControlName="city" [class.is-invalid]="invalidFieldsTwo('city')">
+            <option *ngIf="!code"></option>
+            <option *ngFor="let city of cities" >{{city.city}}</option>                      
+        </select>
+        <div class="title-field-form" >Nit *</div>
+        <input type="number"  class="formInput" formControlName="nit" [class.is-invalid]="invalidFieldsTwo('nit')" >
+        <div class="title-field-form">Total *</div>
+        <input type="number" class="formInput" formControlName="total" [class.is-invalid]="invalidFieldsTwo('total')" >
+        <div class="title-field-form">SubTotal *</div>
+        <input type="number"  class="formInput"  formControlName="subTotal" [class.is-invalid]="invalidFieldsTwo('subTotal')" >
+        <div class="title-field-form" >Iva *</div>
+        <input type="number"  class="formInput" formControlName="iva"[class.is-invalid]="invalidFieldsTwo('iva')" >
+        <div class="title-field-form">Retención *</div>
+        <input type="number"  class="formInput" formControlName="retention"  [class.is-invalid]="invalidFieldsTwo('retention')">
+        <div class="title-field-form" *ngIf="code">Fecha de creación</div>        
+        <input  type="text"  formControlName="creationDate"  class="formInput" *ngIf="code" readonly>
+        <div class="title-field-form">Estado *</div>   
+        <select class="selectForm" formControlName="status" [class.is-invalid]="invalidFieldsTwo('status')">
+            <option ></option>
+            <option *ngFor="let stat of status">{{stat}}</option>                            
+        </select>  
+        <div class="title-field-form">¿Factura pagada? *</div>   
+        <select class="selectForm" formControlName="paid"  [class.is-invalid]="invalidFieldsTwo('paid')" >
+            <option ></option>
+            <option *ngFor="let pd of paid">{{pd}}</option>                                           
+        </select>             
+ 
+        <button *ngIf="!code" class="btn-save formInput" (click)="validateForm('save')">Guardar</button>
+        <app-form-buttons *ngIf="code" [left-btn]="'Modificar'" [right-btn]="'Eliminar'" (updateElement)="validateForm($event)" (deleteElement)="openDialog($event)"></app-form-buttons>
+    </form>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="back-button-container">    
+            <div class="back-button" (click)="changeRoute()"
+                                     routerLink="/home"
+                                     [removeSVGAttributes]="['fill']"   
+                                     [setSVGAttributes]="{cursor: 'pointer', width:'100%' ,height:'100%' }"
+                                     [inlineSVG]="'../../../assets/svg/bxs-left-arrow-square.svg'">
+            </div> 
+</div>
+

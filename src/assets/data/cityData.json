@@ -1,0 +1,12 @@
+{
+    "cities":[
+        {"city": "Armenia"},  
+        {"city": "Barranquilla"},
+        {"city": "Bogota"},  
+        {"city": "Bucaramanga"},
+        {"city": "Cali"},  
+        {"city": "Cartagena"},
+        {"city": "Cucuta"},  
+        {"city": "Ibague"}
+    ]
+}

@@ -1,0 +1,67 @@
+.select-main-container{    
+   /*  background-color: aqua; */
+    width: 100%;
+    height: 100%;
+}
+.select-container{
+   /*  background-color: red !important; */
+    width: 100%;
+    height: 100%;    
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;    
+}
+.select-card{
+    width: 100%;
+    height: 45%;
+    background-color: rgb(255 255 255 / 12%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    color: rgb(24, 227, 242);
+    &:hover{        
+        box-shadow: 0px 0px 10px 0px rgb(24, 227, 242);
+        border:rgb(11, 240, 209) 1px solid ;
+    }
+}
+@media(min-width:400px){
+    .select-container{
+        margin: auto;
+        width: 80%;
+    }
+}
+@media(min-width:500px){
+    .select-container{       
+        width: 60%;
+    }
+}
+@media(min-width:600px){
+    .select-container{       
+        width: 40%;
+    }
+}
+@media(min-width:1000px){
+    .select-main-container{
+        display: flex;      
+    }
+    .select-container{
+        /* margin: auto; */
+        width: 800px;
+        height: 300px;
+        flex-direction: row;
+        background-color: transparent !important;        
+        .select-card{
+            width: 40%;
+            height: 100%;            
+        }
+    }
+}
+@media(min-width:1300px){
+    .select-container{        
+        width: 1000px;
+        height: 400px;
+    }
+}

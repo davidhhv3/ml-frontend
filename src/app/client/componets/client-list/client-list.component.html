@@ -1,0 +1,20 @@
+<div class="client-list-container">
+
+    <app-back-button [route]="'/home/select'" ></app-back-button>
+    
+    <div class="client-list">
+        <div class="client-list-header">
+            <div class="client-list-header-item item-width">Nombre</div>
+            <div class="client-list-header-item item-width">Apellido</div>
+            <div class="client-list-header-item item-width">Correo</div>
+        </div>  
+        <div class="client-list-items-container" *ngFor="let  client of  clients">
+            <div class="client-list-items" [routerLink]="['/home/client/form', client.id]">
+                <div class="client-list-item item-width">{{client.name}}</div>
+                <div class="client-list-item item-width">{{client.lastName}}</div>
+                <div class="client-list-item item-width">{{client.email}}</div>
+            </div>
+        </div>              
+    </div>  
+    <app-add [route]="'/home/client/form'"></app-add>
+</div>

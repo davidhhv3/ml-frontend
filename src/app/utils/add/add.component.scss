@@ -1,0 +1,19 @@
+.add-client-container{       
+    background-color: red;
+    margin-top: 30px;
+    .add-client{
+        width: 30px;
+        height: 30px;
+        fill: white !important;
+        float: right;
+        &:hover{
+            fill: rgb(24, 227, 242) !important;
+        }
+    }
+}
+@media(min-width:1000px){   
+    .add-client{
+        width: 50px !important;
+        height: 50px !important;        
+    } 
+}

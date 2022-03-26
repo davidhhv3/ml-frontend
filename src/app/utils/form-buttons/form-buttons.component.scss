@@ -1,0 +1,37 @@
+.form-buttons-cotainer{
+    height: 30px;    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;    
+    .buttons{
+        height: 100%;  
+        .btn-update{
+            background-color: #00214C;
+            color: rgb(24, 227, 242);
+            border: 1px solid rgb(24, 227, 242);
+            &:hover{
+                color:#00214C;;
+                background-color: rgb(24, 227, 242);
+            }            
+        }
+        .btn-delete{
+            background-color: red;
+            border:none;
+            &:hover{                
+                box-shadow: 0px 0px 11px 1px rgb(220, 37, 98);
+                outline:rgb(252, 2, 189) 1px solid;
+            }
+        }               
+    }
+}
+@media(min-width:1000px){
+    .form-buttons-cotainer{
+        height: 45px;
+    }
+}
+.btn{    
+    cursor: pointer;
+    color: white;
+    height: 100%;   
+    padding: 0 15px;
+}

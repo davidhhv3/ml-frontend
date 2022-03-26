@@ -1,0 +1,37 @@
+<app-back-button [route]="'/home/select'" ></app-back-button>
+<div class="invoice-list-container">
+    <div class="invoice-list">
+        <div class="invoice-list-header">
+            <div class="invoice-list-header-item item-width">CódigoFactura</div>
+            <div class="invoice-list-header-item item-width">Cliente</div>
+            <div class="invoice-list-header-item item-width">Ciudad</div>
+            <div class="invoice-list-header-item item-width">NIT</div>
+            <div class="invoice-list-header-item item-width">TotalFactura</div>
+            <div class="invoice-list-header-item item-width">SubTotal</div>
+            <div class="invoice-list-header-item item-width">Iva</div>
+            <div class="invoice-list-header-item item-width">Retencion</div>
+            <div class="invoice-list-header-item item-width">Fecha Creacion</div>
+            <div class="invoice-list-header-item item-width">Estado</div>
+            <div class="invoice-list-header-item item-width">Pagada</div>
+            <div class="invoice-list-header-item item-width">Fecha Pago</div>
+        </div>
+        <div class="invoice-list-items-container" *ngFor="let  invoice of  invoices">
+            <div class="invoice-list-items" [routerLink]="['/home/invoice/form', invoice.code]">
+                <div class="invoice-list-item item-width">{{invoice.code}}</div>
+                <div class="invoice-list-item item-width">{{invoice.client}}</div>
+                <div class="invoice-list-item item-width">{{invoice.city}}</div>
+                <div class="invoice-list-item item-width">{{invoice.nit}}</div>
+                <div class="invoice-list-item item-width">{{invoice.total}}</div>
+                <div class="invoice-list-item item-width">{{invoice.subTotal}}</div>
+                <div class="invoice-list-item item-width">{{invoice.iva}}</div>
+                <div class="invoice-list-item item-width">{{invoice.retention}}</div>
+                <div class="invoice-list-item item-width">{{invoice.creationDate}}</div>
+                <div class="invoice-list-item item-width">{{invoice.status}}</div>   
+                <div class="invoice-list-item item-width">{{invoice.paid}}</div>           
+                <div class="invoice-list-item item-width">{{invoice.paymentDate}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-add [route]="'/home/invoice/form'"></app-add>
+
